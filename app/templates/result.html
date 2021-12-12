@@ -41,15 +41,16 @@
         </tr>
         </thead>
     <tbody>
-    {#      {% for user in users %}#}
+    {% for eachstocks in data%}
         <tr>
-          <td>{{ value1 }}</td>
-          <td>{{ value2 }}</td>
-          <td>{{ operation }}</td>
-          <td>{{ result }}</td>
+          <td>{{ eachstocks[0] }}</td>
+          <td>{{ eachstocks[1] }}</td>
+          <td>{{ eachstocks[2] }}</td>
+          <td>{{ eachstocks[3] }}</td>
         </tr>
 
-{#      {% endfor %}#}
+
+     {% endfor %}
     </tbody>
     </table>
         {#</div>#}

@@ -11,9 +11,9 @@ class CalculatorController(ControllerBase):
         if request.form['value1'] == '' or request.form['value2'] == '':
             error = 'Please enter numeric values in both fields and try again.'
             return render_template('calculator.html', error=error)
-        # elif request.form['value1'] = /[^a-zA-Z0-9 ]/g or request.form['value2'] == [/a-zA-Z/]:
-        #     error = 'Please enter numeric values'
-        #     return render_template('calculator.html', error=error)
+        elif request.form['value2'] == '0' and request.form['operation'] == 'division':
+            error = 'Division by zero is not valid Please enter valid inputs and Try again!'
+            return render_template('calculator.html', error=error)
         else:
             flash('Calculation is successful.Please find result below.')
 
@@ -35,8 +35,9 @@ class CalculatorController(ControllerBase):
             inFile.close()
             df = read_csv('output.csv')
             data = df.values
-            return render_template('result.html', data=data)
 
+            return render_template('result.html', data=data, value1=value1, value2=value2, operation=operation,
+                                   result=result)
             #return render_template('result.html', value1=value1, value2=value2, operation=operation, result=result)
 
     @staticmethod

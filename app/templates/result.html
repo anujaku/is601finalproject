@@ -2,38 +2,92 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-    <style>
-        #data {
+
+<html>
+<head>
+  <!-- jQuery -->
+  <script type="text/javascript"
+          src="https://code.jquery.com/jquery-3.5.1.js">
+  </script>
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet"
+        href=
+"https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+
+  <!-- DataTables JS -->
+  <script src=
+"https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js">
+  </script>
+  <style>
+    th
+    {
+       text-align:left;
+    }
+    #data {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
             border: 1px solid grey;
             height: 50px;
-            width: 500px;
+            width: 700px;
             text-align: center;
-            margin-left: 34%;
+            margin-left: auto;
+  margin-right: auto;
+            margin-bottom: 50px;
 
 
 }
-        body {
+    #current{
+        text-align: center;
+    }
+    #tableID_length{
+        margin-left: 400px;
+        margin-bottom: 10px;
+        background-color: white;
+    }
+    #tableID_filter{
+        margin-right: 400px;
+        margin-bottom: 10px;
+        background-color: white;
+    }
+    #tableID_info{
+        margin-left: 400px;
+        margin-bottom: 20px;
+    }
+    #tableID_paginate{
+   margin-right: 400px;
+        margin-bottom: 20px;
+    }
 
-            background: linear-gradient(45deg, #49a09d, #5f2c82);
-        }
-
-#data td, #customers th {
+       #data td, #customers th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 #data  tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 5px solid darkblue;
 }
+
 
 #data tr:nth-child(even){background-color: #f2f2f2;}
 
 #data tr:nth-child(odd){background-color: lightgrey;}
 
-
-
+body{
+  background-color: #fff;
+background-image:
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;
+}
+table
+      {
+        padding: 10px;
+        border: 10px solid #1c87c9;
+        border-radius: 10px;
+        background-color: #e5e5e5;
+        text-align: center;
+      }
 
 #data th {
   padding-top: 12px;
@@ -42,44 +96,90 @@
   background-color: darkblue;
   color: white;
 }
-    </style>
+
+  </style>
+
+
+</head>
+<body>
+
 {% endblock %}
 {% block content %}
-
+ <h2 style="color:black; text-align: center; margin-bottom: 20px;">
+    Calculation Result
+  </h2>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for message in messages %}
-            <div class="alert alert-info" role="alert" style="text-align: center ; margin-top: 70px ;  font-weight: bold;">
+            <div class="alert alert-success alert-dismissible" role="alert" style="text-align: center ; margin-top: 20px ;  font-weight: bold;">
                 {{ message }}
 
             </div>
         {% endfor %}
     {% endif %}
 {% endwith %}
-<div style="text-align: center ; ">
-    <h1>Calculation Result</h1><br>
-     <table id="data" >
 
 
-      <tr>
+
+<div id="img">
+
+<div id="current" style="font-size: 15px">
+ <strong>Value 1: </strong> {{ value1 }} <br>
+<strong>Value 2: </strong> {{ value2 }} <br>
+<strong>Operation: </strong> {{ operation }} <br>
+<strong>Result: </strong> {{ result }} <br> <br>
+<button onclick="document.location='/calculator'"> Go back </button>
+
+</div><br>
+<h2 style="color:black; text-align: center; margin-bottom: 20px;">
+    Calculation History
+  </h2><br>
+  <!-- HTML table with random data -->
+  <div id="tableID_wrapper" class="dataTables_wrapper no-footer">
+      <div class="dataTables_length" id="tableID_length"><label>Show <select name="tableID_length" aria-controls="tableID" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div>
+      <div id="tableID_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="tableID"></label></div>
+      <table id="data" class="display nowrap dataTable no-footer" role="grid" aria-describedby="tableID_info">
+    <thead>
+
+    </thead>
+    <tbody>
+    <tr role="row">
         <th>Value 1</th>
         <th>Value 2</th>
         <th>Operation</th>
         <th>Result</th>
       </tr>
-
- {% for eachstocks in data %}
-        <tr>
-          <td>{{ eachstocks[0] }}</td>
+     {% for eachstocks in data %}
+     <tr>
+          <td >{{ eachstocks[0] }}</td>
           <td>{{ eachstocks[1] }}</td>
           <td>{{ eachstocks[2] }}</td>
           <td>{{ eachstocks[3] }}</td>
         </tr>
-
-
-     {% endfor %}
-
+    {% endfor %}
+    </tbody>
   </table>
-
+      <div class="dataTables_info" id="tableID_info" role="status" aria-live="polite">Showing 1 to 10 of 10 entries</div>
+      <div class="dataTables_paginate paging_simple_numbers" id="tableID_paginate">
+          <a class="paginate_button previous " aria-controls="tableID" data-dt-idx="0" tabindex="-1" id="tableID_previous">Previous</a>
+          <span><a class="paginate_button current" aria-controls="tableID" data-dt-idx="1" tabindex="0">1</a></span>
+          <a class="paginate_button next " aria-controls="tableID" data-dt-idx="2" tabindex="-1" id="tableID_next">Next</a>
+      </div></div>
 </div>
+
+<script>
+ $(document).ready(function() {
+    $('#data').DataTable( {
+        dom: 'Bfrtip',
+        lengthMenu: [
+            [ 10, 25, 50, -1 ],
+            [ '10 rows', '25 rows', '50 rows', 'Show all' ]
+        ],
+        buttons: [
+            'pageLength'
+        ]
+    } );
+} );
+</script></body>
+</html>
 {% endblock %}

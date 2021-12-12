@@ -6,15 +6,39 @@
         .important {
             color: #336699;
         }
-        body{
+        #body{
+            padding: 40px;
             text-align: center;
-            margin-left: 50%;
+            margin-left: 38%;
+border: 1px solid grey;
+            height: 500px;
+            width: 400px;
+            color: black;
+            font-size: 18px;
+
+            background-image: linear-gradient(to right, lemonchiffon, palevioletred);
+            margin-bottom: 50px;
         }
+        body {
+	background:
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+linear-gradient(45deg, #343702 0%, #184500 20%, #187546 30%, #006782 40%, #0b1284 50%, #760ea1 60%, #83096e 70%, #840b2a 80%, #b13e12 90%, #e27412 100%);
+background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+background-color: #840b2a;
+}
+
+
+
     </style>
 {% endblock %}
 {% block content %}
-
-    <h1 style="margin-top: 70px ; text-align: center">My Calculator</h1>
+<body>
+    <h1 style="margin-top: 40px ; text-align: center ;margin-left: 41% ; color: black ; background-image: linear-gradient(to right, lemonchiffon, palevioletred);; width: 300px" >Web Calculator</h1>
      {% if error %}
          <div class="alert alert-danger error" role="alert">
              {{ error }}
@@ -22,11 +46,11 @@
       {% endif %}
   <div class="mb-3 row" style="text-align: center ; margin-top: 50px">
 
-    <form action="/calculator" method="POST">
-        <label for="value1" class="col-sm-2 col-form-label">Enter Value 1:</label><br>
-        <input type="text" id="value1" name="value1" value="1"><br>
-        <label for="value2" class="col-sm-2 col-form-label">Enter Value 2:</label><br>
-        <input type="text" id="value2" name="value2" value="2"><br>
+    <form action="/calculator" method="POST" id="body">
+        <label for="value1" class=" col-form-label">Enter Value 1: </label>
+        <input type="text" id="value1" name="value1" pattern="[0-9]+" value="1"><br><br>
+        <label for="value2" class="col-form-label">Enter Value 2:</label>
+        <input type="text" id="value2" name="value2" pattern="[0-9]+" value="2"><br><br>
         <fieldset>
         <legend><b>Choose Operation</b></legend>
           <div>
@@ -50,4 +74,5 @@
         <br><input type="submit" value="Submit">
     </form>
   </div>
+    </body>
 {% endblock %}

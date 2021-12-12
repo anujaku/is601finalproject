@@ -87,15 +87,34 @@
             background-color: gray;
             color: black;
         }
-        .footer {
-            position: fixed;
-            left: 0;
-            right: auto;
-            bottom: 0;
-            width: 100%;
-            color: #0f3a42;
-            text-align: center;
+        #abc{
+            float: left;
+            margin-top: -45px;
+            margin-left: 250px;
+            color: white;
         }
+
+        #abcd{
+            float: right;
+             margin-top: -45px;
+            margin-right: 250px;
+            color: white;
+        }
+        #cal{
+            margin-top: 20px;
+            color: white;
+        }
+
+
+           footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+
+               height: 200px;
+               margin-top: 1000px;
+}
         @media only screen and (max-width: 620px) {
             /* For mobile phones: */
             .divSection {
@@ -116,14 +135,14 @@
                 width: 100%;
                 margin-left: 10px;
             }
-            .footer {
-                position: relative;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                color: #0f3a42;
-                text-align: center;
-            }
+            #footer {
+           margin-top: 200px ;
+                text-align: center ;
+                background-color: lightgray ;
+                color: black;
+                height: 50px;
+                padding-top: 10px;
+        }
             #heading{font-weight: bold;
                 font-size: 30px;
                 margin-bottom: 90px;
@@ -140,7 +159,7 @@
   <body>
 <div class="wrapper">
 <br><br><br><br>
-    <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-dark bg-gradient fixed-top" style="background-color: #0f3a42; position: fixed">
+    <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-dark  fixed-top" style="background-image: linear-gradient(to right, black, darkblue); position: fixed">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,7 +168,7 @@
             <div  class=" menu collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                        <a class="nav-link active selected" aria-current="page" href="/">Home</a></li>
                 <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Python Introduction
@@ -173,18 +192,29 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
 
       <div>
-        {% block footer %}
-        <footer style="background-color: #0f3a42; height: 50px; padding-right: 20px;">
-            <a href="https://github.com/anujaku/is601finalproject" target="_blank" title="My git repository"
-                class="footer-repo">Anuja Github</a>
-              <a href="https://github.com/jastina10/is601finalproject" target="_blank" title="My git repository"
-                class="footer-repo">Suhani Github</a>
-            <a href="https://validator.w3.org/" target="_blank" title="W3C Validator report" class="footer-report">W3C Validator</a>
-                &copy;Copyright by Anuja Kulkarni & Suhani Javia 2021
-            </footer>
-        {% endblock %}
+
     </div>
     </div>
+<div id="footer" style="margin-top: 80px ; text-align: center ; background-image: linear-gradient(to right, black, darkblue) ; color: white; height: 100px; width: 100%; margin-bottom: 10px">
+    {% block footer %}
+<div id="cal">
+        <p style="color: white"> &copy; Copyright 2021 </p>
+     <a style="text-decoration: none ;  color: white" href="https://validator.w3.org/">W3C Validator</a><br>
+        </div>
+ <div id="abc">
+<h5>Suhani Javia</h5>
+                <ul class="list-unstyled text-small" >
+                    <li><a style="text-decoration: none ; color: white" class="text-muted" href="#">Email: sj48@njit.edu</a></li>
+                    <li><a  class="text-muted" href="https://github.com/jastina10/is601finalproject">GitHub</a></li>
+                </ul>    </div>
+    <div id="abcd">
+<h5>Anuja Kulkarni</h5>
+
+                    <a style="text-decoration: none" class="text-muted" href="#">Email: avk5@njit.edu</a><br>
+                    <a  class="text-muted" href="https://github.com/anujaku/is601finalproject">GitHub</a>
+                   </div>
+    {% endblock %}
+</div>
   </body>
 
 </html>

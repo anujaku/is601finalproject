@@ -2,46 +2,73 @@
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
-      <style>
-          .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-              margin-bottom: 0;
-            width: 400px;
-              height: 80px;
-            }
+    <style>
+        #data {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+            border: 1px solid grey;
+            height: 50px;
+            width: 500px;
+            text-align: center;
+            margin-left: 34%;
+
+
+}
+        body {
+
+            background: linear-gradient(45deg, #49a09d, #5f2c82);
+        }
+
+#data td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#data  tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+#data tr:nth-child(even){background-color: #f2f2f2;}
+
+#data tr:nth-child(odd){background-color: lightgrey;}
+
+
+
+
+#data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: darkblue;
+  color: white;
+}
     </style>
 {% endblock %}
 {% block content %}
-    <img src="{{ url_for('static', filename='images/njit.png') }}" alt="njit logo" class="center">
-    <h1>Calculation Result</h1>
+
     {% with messages = get_flashed_messages() %}
-     {% if messages %}
-       {% for message in messages %}
-        <div class="alert alert-success alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true" class="closebtn">&times;</span>
-          </button>
-         {{message}}
-        </div>
-      {% endfor %}
-     {% endif %}
-   {% endwith %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info" role="alert" style="text-align: center ; margin-top: 70px ;  font-weight: bold;">
+                {{ message }}
 
-     {#<div class="container px-4 px-lg-5">#}
-    <table id="data" class="table table-striped">
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div style="text-align: center ; ">
+    <h1>Calculation Result</h1><br>
+     <table id="data" >
 
-    <thead>
-        <tr>
-            <th>Value 1</th>
-            <th>Value 2</th>
-            <th>Operation</th>
-            <th>Answer</th>
-        </tr>
-    </thead>
-    <tbody>
-    {% for eachstocks in data%}
+
+      <tr>
+        <th>Value 1</th>
+        <th>Value 2</th>
+        <th>Operation</th>
+        <th>Result</th>
+      </tr>
+
+ {% for eachstocks in data %}
         <tr>
           <td>{{ eachstocks[0] }}</td>
           <td>{{ eachstocks[1] }}</td>
@@ -51,24 +78,8 @@
 
 
      {% endfor %}
-    </tbody>
-    </table>
-        {#</div>#}
-{% endblock %}
 
-{% block scripts %}
-  <script>
-    $(document).ready(function () {
-      $('#data').DataTable({
-        columns:
-            [
-                {searchable: false},
-                {searchable: false},
-                null,
-                null
-            ],
-      });
-    });
-  </script>
+  </table>
 
+</div>
 {% endblock %}

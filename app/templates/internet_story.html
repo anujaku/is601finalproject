@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="body-content">
+  <h1 style="text-align: center">True Story Of Internet</h1>
+  <p><br/></p>
+
+  <div class="grid-container-4">
+    <div class="page-section">
+      <div class="grid-left">
+        <h2><strong>The Dotcom Bubble</strong></h2>
+        <p> The dotcom bubble started without the world wide web, and indeed in the beginning it didn't even recognize the
+        Internet as important. Once Al Gore began talking about the "information superhighway" in the early 1990s, however,
+        the "big end of town" - Hollywood, Silicon Valley, telecommunications carriers, cable companies, and media
+        conglomerates, all began investing.</p>
+        <p>Between April 1992 and July 1993 all of the major US business magazines had published major features on new
+        communications and the "Information Superhighway". It's worth analyzing what these magazines and feature articles
+        talked about. The first thing I noticed - not one of the feature articles I picked up mentioned the Internet. It
+        wasn't on the business horizon of this brave new converged world of Silicon Valley and Hollywood. They were more
+        interested in interactive television.</p>
+        <p>Business Week's July 12 1993 edition had a cover story "Media Mania… digital - interactive - multimedia - the rush
+        is on". Time Warner's Gerard Levin talked of switching home televisions to "anything, anywhere". Electronic books and
+        magazines were about to change the world. Interactive TV would get to 20% of US homes by the turn of the century.</p>
+        <p>California Business in April 1992 had Silicon Valley meeting Hollywood in a 100 billion market as its cover story.
+        And Forbes Magazine on April 13 1992 featured cable companies beating the phone companies to wire homes for the
+        digital age. And touted the ultimate convergence device, where the television telephone and computer would merge in
+        to a single intelligent box - a telecomputer.</p>
+      </div>
+      <div class="grid-right">
+        <img src="{{ url_for('static', filename='images/dotcom.jpeg') }}" alt="Galactic Network" class="grid-img">
+      </div>
+    </div>
+  </div>
+  <div class="page-section">
+    <div class="grid-left">
+      <h2><strong>Browser War</strong></h2>
+      <p>The internet that we know today was nothing like how it was in its early stages. This is not a coincidence since
+        the creation of the internet browser played a key role in the evolution of the modern-day internet and is regularly
+        used to access it today. Upon the invention of the world wide web, it brought upon a war between multiple companies
+        to become the most technologically advanced and most profitable browser.</p>
+      <p>Among those companies was Microsoft, headed by Bill Gates. He had envisioned that the average person could have
+        personal computers at home with his company’s Windows operating system. The business model at the time was to make
+        profit of customers who would pay to join the Microsoft network in order to access information.</p>
+      <p>A war would start as a result of a major breakthrough from a company called Netscape with its very first product,
+        Netscape Navigator, a multiplatform browser that a bunch of young computer programmers had designed as a graphical
+        web browser where the user could point and click, making it much more user friendly.</p>
+      <p>With the help of rich and well-known entrepreneur and computer scientist, Jim Clark, and the co-author of Mosaic,
+        Marc Andreessen, Netscape was founded in 1994 under the initial name Mosaic Communication Corporation, soon renamed
+        as Netscape Communication Corporation in the same year. It was the first company to attempt to capitalize on the
+        world wide web. When it launched Netscape Navigator, it was an instant success and was the most widely used web
+        browser, causing its competitor, Microsoft, to completely shift their focus on developing a web browser.</p>
+      </div>
+    <div class="grid-right">
+      <img src="{{ url_for('static', filename='images/war.jpeg') }}" alt="ARPANET" class="grid-img">
+    </div>
+  </div>
+</div>
+{% endblock %}

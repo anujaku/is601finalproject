@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="body-content">
+    <h1 style="text-align: center"><b>Design Patterns</b></h1>
+    <p><br/></p>
+
+    <div class="grid-container-4">
+        <div class="page-section">
+            <div class="grid-left">
+                <h2 class="adjust-margin"><strong><b>Introduction</b></strong></h2>
+                <p>Design patterns are used to represent the pattern used by developers to create software or web
+          application. These patterns are selected based on the requirement analysis. The patterns describe
+          the solution to the problem, when and where to apply the solution and the consequences of the
+          implementation.</p>
+        <p>Python is an open source scripting language. It has libraries that support a variety of design
+          patterns. The syntax of python is easy to understand and uses English keywords.
+          Python provides support for the list of design patterns some of them are as mentioned below.</p>
+        <ol>
+          <li>Singleton pattern</li>
+          <li>Factory pattern</li>
+          <li>Builder pattern</li>
+          <li>Facade pattern</li>
+          <li>Command pattern</li>
+          <li>Prototype pattern</li>
+          <li>Proxy pattern</li>
+          <li>Chain of Responsibility pattern</li>
+          <li>Abstract Factory pattern</li>
+          <li>Observer Pattern</li>
+          <li>Object Oriented Pattern</li>
+        </ol>
+            </div>
+        </div>
+        <br>
+        <div class="page-section">
+            <div class="grid-left">
+                <h2 class="adjust-margin"><strong><b> Benefits of using Design Patterns : </b></strong></h2>
+                <ol>
+                    <li>Patterns provide developer a selection of tried and tested solutions for the specified problems.</li>
+                    <li>All design patterns are language neutral.</li>
+                    <li>Patterns help to achieve communication and maintain well documentation.</li>
+                    <li>It includes a record of accomplishment to reduce any technical risk to the project.</li>
+                    <li>Design patterns are highly flexible to use and easy to understand.</li>
+                </ol>
+            </div>
+        </div>
+        <br>
+        <div class="page-section">
+            <div class="grid-left">
+                <h2 class="adjust-margin"> <strong><b> Factory pattern</b></strong></h2>
+                <p>The factory pattern comes under the creational patterns list category. It provides one of the
+                    best ways to create an object. In factory pattern, objects are created without exposing the logic
+                    to client and referring to the newly created object using a common interface.</p>
+            </div>
+            <div class="grid-right">
+                <img src="{{ url_for('static', filename='images/factory.png') }}" alt="factory" style="height: 200px; width: 600px" class="grid-img">
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="grid-left">
+                <p>Factory patterns are implemented in Python using factory method. When a user calls a method such
+                    that we pass in a string and the return value as a new object is implemented through factory
+                    method. The type of object used in factory method is determined by string which is passed through
+                    method.</p>
+                <p>In our calculator program, a <strong> factory method </strong>is utilized in the calculation.py file
+                    within the calculation's directory as the <strong>"create"</strong> method that allows for a
+                    calculation object (Addition, Subtraction, Division, Multiplication) to be made with argument values.
+                </p>
+            </div>
+            <div class="grid-right">
+                <img src="{{ url_for('static', filename='images/factory1.png') }}" alt="factory pattern" style="height: 200px; width: 600px" class="grid-img">
+            </div>
+        </div>
+
+        <br>
+        <div class="page-section">
+                <div class="grid-left">
+                    <h3 class="adjust-margin"><strong><b> Command Pattern </b></strong></h3>
+                    <p>Command Pattern adds a level of abstraction between actions and includes an object, which
+                        invokes these actions.</p>
+                    <p>In this design pattern, client creates a command object that includes a list of commands to be
+                        executed. The command object created implements a specific interface.</p>
+                    <p>Command is a behavioral design pattern that turns a request into a stand-alone object that
+                        contains all information about the request. This transformation lets you pass requests as a
+                        method arguments, delay or queue a request’s execution, and support undoable operations.</p>
+                    <p>In our calculator program, a <strong> command pattern </strong>is utilized in the calculator.py file
+                        within the calculator directory. Basically in Calculator class, we are not defining any method. We are just
+                        calling the methods which are created in other classes.
+                    </p>
+                </div>
+            <div class="grid-right">
+                <img src="{{ url_for('static', filename='images/command.png') }}" alt="mySpace logo" style="height: 300px; width: 600px" class="grid-img">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

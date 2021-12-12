@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div id="color" style="background-color: white;">
+  <div class="body-content" style="padding-left: 20px">
+    <h2 style="text-align: center;padding:30px;background-color: white ">Early Home Computers</h2>
+
+    <p>The history of the personal computer as a mass-market consumer electronic device began with the
+      microcomputer revolution of the 1970s. A personal computer is one intended for interactive individual
+      use, as opposed to a mainframe computer where the end user's requests are filtered through operating
+      staff, or a time-sharing system in which one large processor is shared by many individuals. After the
+      development of the microprocessor, individual personal computers were low enough in cost that they
+      eventually became affordable consumer goods. Early personal computers – generally called microcomputers –
+      were sold often in electronic kit form and in limited numbers, and were of interest mostly to hobbyists
+      and technicians.</p>
+    <div class="page-section">
+      <div class="grid-left">
+        <h4 class="adjust-margin" style="text-align: center"><strong>Mainframes, minicomputers, and microcomputers</strong></h4>
+        <p>Computer terminals were used for time sharing access to central computers. Before the
+          introduction of the microprocessor in the early 1970s, computers were generally large,
+          costly systems owned by large corporations, universities, government agencies, and similar-sized
+          institutions. End users generally did not directly interact with the machine, but instead would
+          prepare tasks for the computer on off-line equipment, such as card punches. A number of
+          assignments for the computer would be gathered up and processed in batch mode. After the job
+          had completed, users could collect the results. In some cases, it could take hours or days
+          between submitting a job to the computing center and receiving the output.
+          A more interactive form of computer use developed commercially by the middle 1960s. In a
+          time-sharing system, multiple computer terminals let many people share the use of one mainframe
+          computer processor. This was common in business applications and in science and engineering.</p>
+      </div>
+      <div class="grid-right">
+        <img src="{{ url_for('static', filename='images/mainframeComputer.jpeg') }}" alt="J.C.R. Licklider" class="grid-img">
+      </div>
+    </div>
+    <div class="page-section">
+      <div class="grid-left">
+        <p>Some of the first computers that might be called "personal" were early <strong>minicomputers</strong> such as the LINC
+          and PDP-8, and later on VAX and larger minicomputers from Digital Equipment Corporation (DEC), Data
+          General, Prime Computer, and others. By today's standards, they were very large (about the size of a
+          refrigerator) and cost prohibitive (typically tens of thousands of US dollars). However, they were much
+          smaller, less expensive, and generally simpler to operate than many of the mainframe computers of the
+          time. Therefore, they were accessible for individual laboratories and research projects. Minicomputers
+          largely freed these organizations from the batch processing and bureaucracy of a commercial or university
+          computing center.</p>
+        <p>In addition, minicomputers were relatively interactive and soon had their own operating systems.
+          The minicomputer Xerox Alto (1973) was a landmark step in the development of personal computers
+          because of its graphical user interface, bit-mapped high resolution screen, large internal and
+          external memory storage, mouse, and special software.</p>
+      </div>
+      <div class="grid-right">
+        <img src="{{ url_for('static', filename='images/minicomputer.jpeg') }}" alt="J.C.R. Licklider" class="grid-img">
+      </div>
+    </div>
+
+    <div class="page-section">
+      <div class="grid-left">
+        <h4 class="adjust-margin" style="text-align: left "><strong>Apple II</strong></h4>
+        <p>Steve Wozniak (known as "Woz"), a regular visitor to Homebrew Computer Club meetings, designed
+          the single-board Apple I computer and first demonstrated it there. With specifications in hand
+          and an order for 100 machines at US$500 each from the Byte Shop, Woz and his friend Steve Jobs
+          founded Apple Computer.
+          About 200 of the machines sold before the company announced the Apple II as a complete computer.
+          It had color graphics, a full QWERTY keyboard, and internal slots for expansion, which were
+          mounted in a high quality streamlined plastic case. The monitor and I/O devices were sold
+          separately. The original Apple II operating system was only the built-in BASIC interpreter
+          contained in ROM. Apple DOS was added to support the diskette drive; the last version was
+          "Apple DOS 3.3".
+          Its higher price and lack of floating point BASIC, along with a lack of retail distribution
+          sites, caused it to lag in sales behind the other Trinity machines until 1979, when it surpassed
+          the PET. It was again pushed into 4th place when Atari introduced its popular Atari 8-bit systems.</p>
+      </div>
+      <div class="grid-right">
+        <img src="{{ url_for('static', filename='images/AppleII.jpeg') }}" alt="AppleII.jpg" class="grid-img">
+      </div>
+    </div>
+
+    <div class="page-section">
+      <div class="grid-left">
+        <h4 class="adjust-margin" style="text-align: left "><strong>The IBM PC</strong></h4>
+        <p>IBM responded to the success of the Apple II with the IBM PC, released in August 1981. Like the
+          Apple II and S-100 systems, it was based on an open, card-based architecture, which allowed
+          third parties to develop for it. It used the Intel 8088 CPU running at 4.77 MHz, containing
+          29,000 transistors. The first model used an audio cassette for external storage, though there
+          was an expensive floppy disk option. The cassette option was never popular and was removed in
+          the PC XT of 1983.[62] The XT added a 10MB hard drive in place of one of the two floppy disks
+          and increased the number of expansion slots from 5 to 8. While the original PC design could
+          accommodate only up to 64k on the main board, the architecture was able to accommodate up to
+          640KB of RAM, with the rest on cards. Later revisions of the design increased the limit to 256K
+          on the main board.
+          The IBM PC typically came with PC DOS, an operating system based on Gary Kildall's CP/M-80
+          operating system. In 1980, IBM approached Digital Research, Kildall's company, for a version of
+          CP/M for its upcoming IBM PC. Kildall's wife and business partner, Dorothy McEwen, met with the
+          IBM representatives who were unable to negotiate a standard non-disclosure agreement with her.
+          IBM turned to Bill Gates, who was already providing the ROM BASIC interpreter for the PC. Gates
+          offered to provide 86-DOS, developed by Tim Paterson of Seattle Computer Products. IBM rebranded
+          it as PC DOS, while Microsoft sold variations and upgrades as MS-DOS.</p>
+      </div>
+      <div class="grid-right">
+        <img src="{{ url_for('static', filename='images/ibmComputer.jpeg') }}" alt="The IBM Computer PC 5150" class="grid-img">
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

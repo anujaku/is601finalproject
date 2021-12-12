@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<style>
+        h1 {
+            font-size: 200%;
+            color: black;
+            text-align: center;
+            /*text-decoration-style: solid;*/
+            margin-bottom: 0;
+            max-width: 100%;
+        }
+        .div1{
+            background-color: #333333;
+            height: 60px;
+            color: white;
+            padding: 15px;
+            font-size: 15px;
+        }
+    </style>
+
+<div class="body-content">
+    <h1 style="text-align: center">Pylint and Glossary of Object-Oriented Programing Terms</h1>
+    <p><br/></p>
+
+    <div class="grid-container-4">
+        <div class="page-section">
+            <div class="grid-left">
+                <h3 class="adjust-margin"><strong><bold>Pylint</bold></strong></h3>
+                <p>Pylint is a tool that checks for errors in Python code, tries to enforce a coding standard and looks for
+                    code smells. It can also look for certain type errors, it can recommend suggestions about how particular
+                    blocks can be refactored and can offer you details about the code's complexity.
+                </p>
+                <p>Pylint will display a number of messages as it analyzes the code and it can also be used for displaying
+                    some statistics about the number of warnings and errors found in different files. The messages are
+                    classified under various categories such as errors and warnings.
+                </p>
+                <p>The code is given an overall mark, based on the number and severity of the warnings and errors.</p>
+            </div>
+            <div class="grid-right">
+                <img src="{{ url_for('static', filename='images/pylint1.png') }}" alt="mySpace logo" class="grid-img">
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="grid-left">
+                <h3 class="adjust-margin"><strong>Pylint Installation </strong></h3>
+                <p>One of the easist ways to download Pylint is by using "pip". Pip is a package management system used to
+                    install and manage software packages written in Python. It is included with recent versions of Python.
+                    If you already have a 64-bit version of Python installed, the "Installing Python" section can be skipped.</p>
+                <p>To install it on systems such as Windows 10, Mac OS, Linux, use the following command:</p>
+                <div class="div1">
+                    <p style="color: white">pip install pylint</p>
+                </div>
+                <br>
+                <p>To verify the pylint installation, type the following command</p>
+                <div class="div1">
+                    <p style="color: white">pylint --version</p>
+                </div><br>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="page-section">
+            <div class="grid-left">
+                <h3 class="adjust-margin"> <strong>Glossary of Object-Oriented Programing Terms</strong></h3>
+                <br>
+                <h4 class="adjust-margin"> <strong>1. Class</strong></h4>
+                <p>A class is a user-defined blueprint or prototype from which objects are created. Classes provide a
+                    means of bundling data and functionality together. Creating a new class creates a new type of object,
+                    allowing new instances of that type to be made. Each class instance can have attributes attached to it
+                    for maintaining its state. Class instances can also have methods (defined by their class) for modifying
+                    their state.</p><br>
+                <h4 class="adjust-margin"> <strong>2. Class Objects</strong></h4>
+                <p>An Object is an instance of a Class. A class is like a blueprint while an instance is a copy of the class
+                    with actual values.</p>
+                <p>An object consists of : </p>
+                <ol>
+                <li>State: It is represented by the attributes of an object. It also reflects the properties of an object.</li>
+                <li>Behavior: It is represented by the methods of an object. It also reflects the response of an object to
+                    other objects.</li>
+                <li>Identity: It gives a unique name to an object and enables one object to interact with other objects.</li>
+                </ol><br>
+                <h4 class="adjust-margin"> <strong>3. Constructor</strong></h4>
+                <p>Constructors are generally used for instantiating an object. The task of constructors is to
+                    initialize(assign values) to the data members of the class when an object of the class is created.
+                    In Python the __init__() method is called the constructor and is always called when an object is created.
+                </p><br>
+                <h4 class="adjust-margin"> <strong>4. Inheritance</strong></h4>
+                <p>Inheritance is the capability of one class to derive or inherit the properties from another class.
+                    The benefits of inheritance are:</p>
+                <ol>
+                <li>It represents real-world relationships well.</li>
+                <li>It provides reusability of a code. We don’t have to write the same code again and again. Also, it
+                    allows us to add more features to a class without modifying it.</li>
+                <li>It is transitive in nature, which means that if class B inherits from another class A, then all the subclasses
+                    of B would automatically inherit from class A.</li>
+                </ol><br>
+                <h4 class="adjust-margin"> <strong>5. Encapsulation</strong></h4>
+                <p>Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It describes the
+                    idea of wrapping data and the methods that work on data within one unit. This puts restrictions on
+                    accessing variables and methods directly and can prevent the accidental modification of data. To prevent
+                    accidental change, an object’s variable can only be changed by an object’s method. Those types of
+                    variables are known as private variable. </p><br>
+                <h4 class="adjust-margin"> <strong>6. Polymorphism</strong></h4>
+                <p>In Python, Polymorphism lets us define methods in the child class that have the same name as the methods
+                    in the parent class. In inheritance, the child class inherits the methods from the parent class.
+                    However, it is possible to modify a method in a child class that it has inherited from the parent class.
+                    This is particularly useful in cases where the method inherited from the parent class doesn’t quite
+                    fit the child class. In such cases, we re-implement the method in the child class. This process of
+                    re-implementing a method in the child class is known as Method Overriding. </p><br>
+                <h4 class="adjust-margin"> <strong>7. Abstraction</strong></h4>
+                <p>Abstraction is used to hide the internal functionality of the function from the users.
+                    The users only interact with the basic implementation of the function, but inner working is hidden.
+                    User is familiar with that "what function does" but they don't know "how it does." </p><br>
+                <h4 class="adjust-margin"> <strong>8. Factory Method</strong></h4>
+                <p>Factory Method is a creational design pattern used to create concrete implementations of a common interface.
+                    It separates the process of creating an object from the code that depends on the interface of the object. </p><br>
+                <h4 class="adjust-margin"> <strong>9. Fixture Method</strong></h4>
+                <p>Fixtures are functions, which will run before each test function to which it is applied. Fixtures are
+                    used to feed some data to the tests such as database connections, URLs to test and some sort of input
+                    data. Therefore, instead of running the same code for every test, we can attach fixture function to the
+                    tests and it will run and return the data to the test before executing each test.</p><br>
+                <h4 class="adjust-margin"> <strong>10. Facade</strong></h4>
+                <p>A facade is a type of pattern which masks more complex software functions.While Facade decreases the
+                    overall complexity of the application, it also helps to move unwanted dependencies to one place.</p><br>
+                <h4 class="adjust-margin"> <strong>11. Design Patterns</strong></h4>
+                <p>Design Patterns is the most essential part of Software Engineering, as they provide the general
+                    repeatable solution to a commonly occurring problem in software design.</p><br>
+                <h4 class="adjust-margin"> <strong>12. Instantiation</strong></h4>
+                <p>Used to create an object instance from a class (instantiate).</p><br>
+                <h4 class="adjust-margin"> <strong>13. Namespace</strong></h4>
+                <p>A namespace is a collection of currently defined symbolic names along with information about the object
+                    that each name references. You can think of a namespace as a dictionary in which the keys are the object
+                    names and the values are the objects themselves. Each key-value pair maps a name to its
+                    corresponding object.</p><br>
+                <h4 class="adjust-margin"> <strong>14. Type Hint</strong></h4>
+                <p>For some time now, Python has had the ability to “annotate” names with type information, in one form or
+                    another. With Python 3.5, type hints officially became part of the language (PEP 484). Using a linter
+                    or code-checking tool, developers can check the consistency of variables and their types across a code
+                    base, and perform static analyses of code that would previously have been difficult or impossible.
+                    All this is done ahead of time, before the code runs.</p><br>
+                <h4 class="adjust-margin"> <strong>15. Type Cast</strong></h4>
+                <p>In Python, Type Casting is a process in which we convert a literal of one type to another.</p><br>
+                <h4 class="adjust-margin"><strong>16. Attribute</strong></h4>
+                <p class="adjust-margin">Attributes of a class are function objects that define corresponding methods of its instances.</p><br>
+                <h4 class="adjust-margin" ><strong>17. Behavior</strong></h4>
+                <p class="adjust-margin">The behavior of an object is defined by its methods, which are the functions and subroutines
+                    defined within the object class.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<div class="body-content">
+    <h1 style="text-align: center">AAA Testing with Python</h1>
+    <p><br/></p>
+
+    <div class="grid-container-4">
+        <div class="page-section">
+            <div class="grid-left">
+                <h3 class="adjust-margin"><strong><b>What is Arrange Act Assert? </b></strong></h3>
+                <p>The “Arrange-Act-Assert” (also AAA and 3A) pattern of testing was observed and named by Bill Wake in
+                    2001.The pattern focuses each test on a single action. The advantage of this focus is that it clearly
+                    separates the arrangement of the System Under Test (SUT) and the assertions that are made on it after
+                    the action.</p>
+                <p>AAA is a pattern for organizing tests. It breaks tests down into three clear and distinct steps:</p>
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="grid-left">
+
+                <ol>
+                    <li><p><b>Arrange : </b> inputs and targets. Arrange steps should set up the test case. Does the test require
+                        any objects or special settings? Does it need to prep a database? Does it need to log into a web app?
+                        Handle all of these operations at the start of the test.</p></li>
+                    <li><p><b>Act : </b> on the target behavior. Act steps should cover the main thing to be tested. This could
+                        be calling a function or method, calling a REST API, or interacting with a web page. Keep actions
+                        focused on the target behavior.</p></li>
+                    <li><p><b>Assert : </b> expected outcomes. Act steps should elicit some sort of response. Assert steps
+                        verify the goodness or badness of that response. Sometimes, assertions are as simple as checking
+                        numeric or string values. Other times, they may require checking multiple facets of a system.
+                        Assertions will ultimately determine if the test passes or fails.</p></li>
+                </ol>
+            </div>
+            <div class="grid-right">
+                <img src="{{ url_for('static', filename='images/AAA_Testing.png') }}" alt="mySpace logo" class="grid-img">
+            </div>
+        </div>
+        <div class="page-section">
+            <div class="grid-left">
+                <h3 class="adjust-margin"><strong><b>Importance of Testing </b></strong></h3>
+                <p>The requirement of rigorous testing and their associated documentation during the software development
+                    life cycle arises because of the below reasons:</p>
+                <ol>
+                    <li>To identify defects</li>
+                    <li>To reduce flaws in the component or system</li>
+                    <li>Increase the overall quality of the system</li>
+                </ol>
+                <p>There can also be a requirement to perform software testing to comply with legal requirements or
+                    industry-specific standards. These standards and rules can specify what kind of techniques should we
+                    use for product development. For example, the motor, avionics, medical, and pharmaceutical industries,
+                    etc., all have standards covering the testing of the product.</p>
+                <p>The points below shows the significance of testing for a reliable and easy to use software product:</p>
+                <ol>
+                    <li>The testing is important since it discovers defects/bugs before the delivery to the client, which guarantees the
+                        quality of the software.</li>
+                    <li>It makes the software more reliable and easy to use.</li>
+                    <li>Thoroughly tested software ensures reliable and high-performance software operation.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="page-section">
+            <div class="grid-left">
+                <br><h3 class="adjust-margin"><strong><b>Testing with external data</b> </strong></h3>
+                <h3><b>Pandas</b></h3>
+                <p>Pandas is an open source Python package that is most widely used for data science/data analysis and
+                machine learning tasks. It is built on top of another package named Numpy, which provides support for
+                multi-dimensional arrays. As one of the most popular data wrangling packages, Pandas works well with
+                many other data science modules inside the Python ecosystem, and is typically included in every Python
+                distribution, from those that come with your operating system to commercial vendor distributions like
+                ActiveState’s ActivePython.</p>
+                <p>Pandas is a data analysis tool often utilized within Python for importing, manipulating, and storing data.
+                    For external test data importation, we will specifically look at
+                    the <span style="font-weight: bold">read_csv()</span> function. Read_csv() provides the user with a
+                    myriad of tools and can be further advanced with tkinter filedialog, however
+                    for this tutorial <span style="font-style: italic">only</span> read_csv() as the function and Pandas
+                    (as the imported package) are required. <br>
+                    With Pandas imported, the <span style="font-weight: bold">arrange</span> statement should follow a
+                    structure as: <br>
+                    <br>#Arrange <br>
+                    <strong>test_csv_data = Pandas.read_csv(file_path,**kwargs)</strong><br><br>
+
+                    kwargs - keyword arguments, specify that within the Pandas.read_csv() function
+                    <span><a style="display: inline;font-size: inherit" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html">
+            documentation</a></span> that parameters can be directly passed for opening the csv file (such as specifying the delimiter
+                    type, header existence, or the data type). <br> <br>
+
+                    This arranges the test data into a Pandas dataframe, which can be further handled by the program as a set of tuples (row-or-column-wise) as well as maintain the path that the
+                    data was obtained from to <span style="font-weight: bold">Act</span> on. With necessary permissions addressed read/write can also be performed within Pandas to csv.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,7 +1,5 @@
 import csv
-
 from pandas import read_csv
-
 from app.controllers.controller import ControllerBase
 from calc.calculator import Calculator
 from flask import render_template, request, flash, redirect, url_for
@@ -13,11 +11,9 @@ class CalculatorController(ControllerBase):
         if request.form['value1'] == '' or request.form['value2'] == '':
             error = 'Please enter numeric values in both fields and try again.'
             return render_template('calculator.html', error=error)
-
-            #return render_template('calculator.html', error=error)
-         #elif request.form['value1'] == '/[^a-zA-Z0-9 ]/g' or request.form['value2'] == '[/a-zA-Z/]':
-             #error = 'Please enter numeric values'
-             #return render_template('calculator.html', error=error)
+        # elif request.form['value1'] = /[^a-zA-Z0-9 ]/g or request.form['value2'] == [/a-zA-Z/]:
+        #     error = 'Please enter numeric values'
+        #     return render_template('calculator.html', error=error)
         else:
             flash('Calculation is successful.Please find result below.')
 

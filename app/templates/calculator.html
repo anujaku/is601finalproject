@@ -42,32 +42,35 @@ background-color: #840b2a;
      {% if error %}
          <div class="alert alert-danger error" role="alert">
              {{ error }}
+         <span type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" class="closebtn">&times;</span>
+         </span>
         </div>
       {% endif %}
   <div class="mb-3 row" style="text-align: center ; margin-top: 50px">
 
     <form action="/calculator" method="POST" id="body">
         <label for="value1" class=" col-form-label">Enter Value 1: </label>
-        <input type="text" id="value1" name="value1" pattern="[0-9]+" value="1"><br><br>
+        <input type="text" id="value1" name="value1" pattern="[0-9]+" value=""><br><br>
         <label for="value2" class="col-form-label">Enter Value 2:</label>
-        <input type="text" id="value2" name="value2" pattern="[0-9]+" value="2"><br><br>
+        <input type="text" id="value2" name="value2" pattern="[0-9]+" value=""><br><br>
         <fieldset>
         <legend><b>Choose Operation</b></legend>
           <div>
             <input type="radio" name="operation" id="addition" value="addition" checked>
-            <label for="addition">addition</label>
+            <label for="addition">Addition</label>
           </div>
           <div>
             <input type="radio" name="operation" id="subtraction" value="subtraction">
-            <label for="subtraction">subtraction</label>
+            <label for="subtraction">Subtraction</label>
           </div>
           <div>
             <input type="radio" name="operation" id="multiplication" value="multiplication">
-            <label for="multiplication">multiplication</label>
+            <label for="multiplication">Multiplication</label>
           </div>
             <div>
             <input type="radio" name="operation" id="division" value="division">
-            <label for="multiplication">division</label>
+            <label for="multiplication">Division</label>
           </div>
         </fieldset>
 

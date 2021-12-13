@@ -28,12 +28,12 @@ class CalculatorController(ControllerBase):
             result = str(Calculator.get_last_calculation_from_result())
 
             fieldnames = ['value1', 'value2', 'operation', 'result']
-            with open('output.csv', 'a', newline='') as inFile:
+            with open('result.csv', 'a', newline='') as inFile:
                 writer = csv.DictWriter(inFile, fieldnames=fieldnames)
                 writer.writerow({'value1': value1, 'value2': value2,
                                  'operation': operation, 'result': result})
             inFile.close()
-            df = read_csv('output.csv')
+            df = read_csv('result.csv')
             data = df.values
 
             return render_template('result.html', data=data, value1=value1, value2=value2, operation=operation,

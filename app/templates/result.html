@@ -111,7 +111,7 @@ table
     {% with messages = get_flashed_messages() %}
     {% if messages %}
         {% for message in messages %}
-            <div class="alert alert-success alert-dismissible" role="alert" style="text-align: center ; margin-top: 20px ;  font-weight: bold;">
+            <div class="alert alert-success alert-dismissible" role="alert" >
                 {{ message }}
 
             </div>
@@ -159,7 +159,6 @@ table
     {% endfor %}
     </tbody>
   </table>
-      <div class="dataTables_info" id="tableID_info" role="status" aria-live="polite">Showing 1 to 10 of 10 entries</div>
       <div class="dataTables_paginate paging_simple_numbers" id="tableID_paginate">
           <a class="paginate_button previous " aria-controls="tableID" data-dt-idx="0" tabindex="-1" id="tableID_previous">Previous</a>
           <span><a class="paginate_button current" aria-controls="tableID" data-dt-idx="1" tabindex="0">1</a></span>

@@ -96,7 +96,15 @@ table
   background-color: darkblue;
   color: white;
 }
-
+#tableID_length{
+    margin-left: 400px;
+}
+#tableID_filter{
+    margin-right: 400px;
+}
+#tableID_paginate{
+    margin-top: -45px;
+}
   </style>
 
 
@@ -159,7 +167,6 @@ table
     {% endfor %}
     </tbody>
   </table>
-      <div class="dataTables_info" id="tableID_info" role="status" aria-live="polite">Showing 1 to 10 of 10 entries</div>
       <div class="dataTables_paginate paging_simple_numbers" id="tableID_paginate">
           <a class="paginate_button previous " aria-controls="tableID" data-dt-idx="0" tabindex="-1" id="tableID_previous">Previous</a>
           <span><a class="paginate_button current" aria-controls="tableID" data-dt-idx="1" tabindex="0">1</a></span>
